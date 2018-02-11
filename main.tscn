@@ -140,7 +140,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68874, 1.31688, 0 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3855, 3.1041, 0 )
 spring_max_length = 5
-smoothness = 0.3
+smoothness = 1.0
 
 [node name="Camera" type="Camera" parent="Spring" index="1"]
 

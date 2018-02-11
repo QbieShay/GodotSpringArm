@@ -1,7 +1,7 @@
 extends KinematicBody
 
-var SPEED = 2
-var ANGLE_SPEED = 15
+var SPEED = 5
+var ANGLE_SPEED = 10
 
 func _ready():
 	get_node("../Spring").target = self
@@ -26,4 +26,4 @@ func _input(event):
 
 func _process(delta):
 	global_rotate( Vector3(0,1,0), rot * ANGLE_SPEED* delta)
-	global_transform.origin += -global_transform.basis.z * SPEED * delta
+	global_transform.origin += -global_transform.basis.z * SPEED * delta * fw
