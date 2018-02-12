@@ -13,6 +13,14 @@ config_version=3
 config/name="Spring"
 config/icon="res://icon.png"
 
+[display]
+
+window/vsync/use_vsync=false
+
+[physics]
+
+common/physics_fps=5
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
