@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spring.tscn" type="PackedScene" id=2]
@@ -28,6 +28,14 @@ subdivide_depth = 0
 [sub_resource type="BoxShape" id=5]
 
 extents = Vector3( 3.89002, 2.39225, 1 )
+
+[sub_resource type="SphereMesh" id=6]
+
+radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
 
 [node name="Spatial" type="Spatial" index="0"]
 
@@ -134,17 +142,49 @@ material/0 = null
 
 [node name="KinematicBody" parent="." index="3" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68874, 1.31688, 0 )
+transform = Transform( 0.479772, 0, -0.877393, 0, 1, 0, 0.877393, 0, 0.479772, -2.68874, 1.31688, 0 )
 
 [node name="Spring" parent="." index="4" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3855, 3.1041, 0 )
+_sections_unfolded = [ "Axis Lock", "Transform" ]
 spring_max_length = 5
-smoothness = 1.0
-interpolate_physics_frames = true
+smoothness = 0.447
+interpolate_physics_frames = false
 
 [node name="Camera" type="Camera" parent="Spring" index="1"]
 
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Spring" index="2"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="Camera" type="Camera" parent="." index="5"]
+
+transform = Transform( 0.0153162, 0, -0.999883, 0, 1, 0, 0.999883, 0, 0.0153162, -41.6316, 9.03068, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null

@@ -19,7 +19,8 @@ window/vsync/use_vsync=false
 
 [physics]
 
-common/physics_fps=5
+common/physics_fps=15
+3d/physics_engine="GodotPhysics"
 
 [rendering]
 
