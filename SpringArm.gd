@@ -22,6 +22,7 @@ func _ready():
 	time_since_last_physic_process = 0 
 	if(target == null):
 		set_physics_process(false)
+		set_process(false)
 
 var time_since_last_physic_process = 0
 func _process(delta):
@@ -35,7 +36,7 @@ func _process(delta):
 
 func set_interpolate_physics_frames(i):
 	interpolate_physics_frames = i
-	set_process(i)
+	#set_process(i)
 
 func get_interpolate_physics_frames():
 	return interpolate_physics_frames
@@ -43,10 +44,12 @@ func get_interpolate_physics_frames():
 func assign_target( t ):
 	if (t == null):
 		set_physics_process(false)
+		set_process(true)
 		return
 	#TODO do stuff and enable process
 	target = t
 	set_physics_process(true)
+	set_process(true)
 
 onready var _last_physics_position = global_transform.origin
 
@@ -55,6 +58,7 @@ var next_phys_position
 var physic_delta
 func _physics_process(delta):
 	time_since_last_physic_process = 0
+	print(str(delta))
 	var wanted_pos = _compute_movement()
 	if(interpolate_physics_frames):
 		#Use move and slide to calculate the right position and then move back

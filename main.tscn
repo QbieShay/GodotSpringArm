@@ -29,13 +29,13 @@ subdivide_depth = 0
 
 extents = Vector3( 3.89002, 2.39225, 1 )
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="PrismMesh" id=6]
 
-radius = 1.0
-height = 2.0
-radial_segments = 64
-rings = 32
-is_hemisphere = false
+left_to_right = 0.5
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
 
 [node name="Spatial" type="Spatial" index="0"]
 
@@ -146,11 +146,11 @@ transform = Transform( 0.479772, 0, -0.877393, 0, 1, 0, 0.877393, 0, 0.479772, -
 
 [node name="Spring" parent="." index="4" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3855, 3.1041, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3855, 5.08701, 0 )
 _sections_unfolded = [ "Axis Lock", "Transform" ]
 spring_max_length = 5
-smoothness = 0.447
-interpolate_physics_frames = false
+smoothness = 0.95
+interpolate_physics_frames = true
 
 [node name="Camera" type="Camera" parent="Spring" index="1"]
 
@@ -169,6 +169,7 @@ far = 100.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Spring" index="2"]
 
+transform = Transform( 1, 0, 0, 0, -0.00579072, 0.999983, 0, -0.999983, -0.00579072, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -192,7 +193,7 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05

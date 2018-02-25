@@ -19,8 +19,7 @@ window/vsync/use_vsync=false
 
 [physics]
 
-common/physics_fps=15
-3d/physics_engine="GodotPhysics"
+3d/physics_engine="Bullet"
 
 [rendering]
 
