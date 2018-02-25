@@ -5,10 +5,10 @@ export var spring_max_length = 10
 export var spring_max_height = 5
 export var smoothness = 0.9
 export var look_at_target = true
-export var look_at_target_smoothness = 0.0 
-export var rotate_with_target = true
-export var rotate_with_target_smoothness = 0.0
-export var angle_from_target_forward = -180.0
+#export var look_at_target_smoothness = 0.0 
+#export var rotate_with_target = true
+#export var rotate_with_target_smoothness = 0.0
+#export var angle_from_target_forward = -180.0
 
 export var interpolate_physics_frames = true setget set_interpolate_physics_frames, get_interpolate_physics_frames
 
@@ -58,7 +58,6 @@ var next_phys_position
 var physic_delta
 func _physics_process(delta):
 	time_since_last_physic_process = 0
-	print(str(delta))
 	var wanted_pos = _compute_movement()
 	if(interpolate_physics_frames):
 		#Use move and slide to calculate the right position and then move back
