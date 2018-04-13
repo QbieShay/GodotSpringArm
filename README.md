@@ -11,4 +11,4 @@ For the spring to work, it is needed to give it a collision shape.
  - Spring Max Height : How high the spring node will stay on the target's up vector
  - Smoothness : How smooth the movement of the spring node should be
  - Look At Target : Should the spring node look at the target
- - Interpolate Physic Frame : Should the spring node interpolate between pysics frames
+ - Interpolate Physic Frame : Should the spring node interpolate between physics frames
