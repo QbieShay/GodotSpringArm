@@ -1,3 +1,6 @@
+# THIS REPOSITORY IS DEPRECATED!
+Godot has a SpringArm Node built-in, so please use that <3
+
 # GodotSpringArm
 A configurable spring arm node for Godot Engine
 
